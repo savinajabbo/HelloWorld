@@ -1,8 +1,11 @@
-course = input('Tell me a joke: ')
+name = input("Enter your name: ")
 
-while len(course) == 20:
-    print('Too many characters!')
-    course = input('Tell me another joke: ')
+while len(name) < 3:
+    print("Your name must be at least 3 characters")
+    name = input("Enter your name: ")
 
-if len(course) < 20:
-    print('Funny')
+while len(name) > 50:
+    print("Your name must have a maxium of 50 characters")
+    name = input("Enter your name: ")
+else:
+    print("Name looks good!")
