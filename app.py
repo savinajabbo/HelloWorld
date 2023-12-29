@@ -1,11 +1,29 @@
-name = input("Enter your name: ")
+command = ""
+s = 0
+t = 0
+started = False
 
-while len(name) < 3:
-    print("Your name must be at least 3 characters")
-    name = input("Enter your name: ")
-
-while len(name) > 50:
-    print("Your name must have a maxium of 50 characters")
-    name = input("Enter your name: ")
-else:
-    print("Name looks good!")
+while True:
+    command = input("> ").lower()
+    if command == "start":
+        if started:
+            print("Car is already started.")
+        else:
+            started = True
+            print("Car started...")
+    elif command == "stop":
+        if not started:
+            print("Car is already stopped!")
+        else:
+            started = False
+            print("Car stopped...")
+    elif command == "help":
+        print('''
+start - to start the car
+stop - to stop the car
+quit - to quit
+        ''')
+    elif command == "quit":
+        break
+    else:
+        print("Sorry, I don't understand that!")
