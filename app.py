@@ -1,29 +1,19 @@
-command = ""
-s = 0
-t = 0
-started = False
+phone = input("Phone: ")
+output = ""
 
-while True:
-    command = input("> ").lower()
-    if command == "start":
-        if started:
-            print("Car is already started.")
-        else:
-            started = True
-            print("Car started...")
-    elif command == "stop":
-        if not started:
-            print("Car is already stopped!")
-        else:
-            started = False
-            print("Car stopped...")
-    elif command == "help":
-        print('''
-start - to start the car
-stop - to stop the car
-quit - to quit
-        ''')
-    elif command == "quit":
-        break
-    else:
-        print("Sorry, I don't understand that!")
+numbers = {
+    "0": "Zero",
+    "1": "One",
+    "2": "Two",
+    "3": "Three",
+    "4": "Four",
+    "5": "Five",
+    "6": "Six",
+    "7": "Seven",
+    "8": "Eight",
+    "9": "Nine"
+}
+
+for digit in phone:
+    output += numbers.get(digit, "!") + " "
+print(output)
