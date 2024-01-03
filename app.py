@@ -1,13 +1,12 @@
-class Person:
-    def __init__(self, name):
-        self.name = name
-    def talk(self):
-        print(f"Hi, I am {self.name}")
+import random
 
 
+class Dice:
+    def roll(self):
+        first = random.randint(1, 6)
+        second = random.randint(1, 6)
+        return first, second
 
-john = Person("John Smith")
-john.talk()
 
-bob = Person("Bob Smith")
-bob.talk()
+dice = Dice()
+print(dice.roll())
